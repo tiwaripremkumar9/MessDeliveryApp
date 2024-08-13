@@ -1,7 +1,10 @@
 package com.techviz.app.pojos;
 
 import jakarta.persistence.*;
+import lombok.*;
 @Entity
+@Getter
+@Setter
 public class Address {
 	
 	@Id
@@ -27,62 +30,6 @@ public class Address {
 		this.line2 = line2;
 		this.line3 = line3;
 		this.pincode = pincode;
-		this.user = user;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getLine1() {
-		return line1;
-	}
-
-	public void setLine1(String line1) {
-		this.line1 = line1;
-	}
-
-	public String getLine2() {
-		return line2;
-	}
-
-	public void setLine2(String line2) {
-		this.line2 = line2;
-	}
-
-	public String getLine3() {
-		return line3;
-	}
-
-	public void setLine3(String line3) {
-		this.line3 = line3;
-	}
-
-	public Locality getLocality() {
-		return locality;
-	}
-
-	public void setLocality(Locality locality) {
-		this.locality = locality;
-	}
-
-	public int getPincode() {
-		return pincode;
-	}
-
-	public void setPincode(int pincode) {
-		this.pincode = pincode;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
 		this.user = user;
 	}
 

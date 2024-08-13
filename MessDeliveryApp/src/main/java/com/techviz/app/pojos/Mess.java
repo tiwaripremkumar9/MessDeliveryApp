@@ -7,9 +7,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name="MESS")
+@Getter
+@Setter
 public class Mess {
 	
 	@Id
@@ -28,46 +32,6 @@ public class Mess {
 		this.messName = messName;
 		this.address = address;
 		this.owner = owner;
-		this.phone = phone;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getMessName() {
-		return messName;
-	}
-
-	public void setMessName(String messName) {
-		this.messName = messName;
-	}
-
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
-	public User getOwner() {
-		return owner;
-	}
-
-	public void setOwner(User owner) {
-		this.owner = owner;
-	}
-
-	public long getPhone() {
-		return phone;
-	}
-
-	public void setPhone(long phone) {
 		this.phone = phone;
 	}
 
