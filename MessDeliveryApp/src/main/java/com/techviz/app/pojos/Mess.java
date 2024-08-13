@@ -1,10 +1,25 @@
 package com.techviz.app.pojos;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="MESS")
 public class Mess {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	@Column(name = "MESS_NAME")
 	private String messName;
+	@OneToOne
 	private Address address;
+	@OneToOne
 	private User owner;
 	private long phone;
 	

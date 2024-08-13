@@ -14,6 +14,7 @@ public class Address {
 	private String line2;
 	@Column(name = "addr_line3")
 	private String line3;
+	@Enumerated(EnumType.STRING)
 	private Locality locality;
 	private int pincode;
 	@ManyToOne
