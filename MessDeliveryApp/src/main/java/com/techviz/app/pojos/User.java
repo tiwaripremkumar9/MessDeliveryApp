@@ -2,6 +2,7 @@ package com.techviz.app.pojos;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -21,24 +22,26 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="USER_ID")
 	private int id;
-	@Column(name = "NAME")
+	@Column(name = "NAME", nullable = false)
 	private String name;
 	@Column(name = "AGE")
 	private int age;
-	@Column(name = "EMAIL")
-	private int email;
-	@Column(name = "MOBILE")
+	@Column(name = "EMAIL", nullable = false)
+	private String email;
+	@Column(name = "MOBILE", nullable = false)
 	private long mobile;
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+	@Column(nullable = false)
 	private List<Address> address;
+	@Column(nullable = false)
 	private String userName;
-	@Column(name = "PASSWORD")
+	@Column(name = "PASSWORD", nullable = false)
 	private String password;
 	@Enumerated(EnumType.STRING)
-	@Column(name = "ROLE")
+	@Column(name = "ROLE", nullable = false)
 	private Role role;
 	
-	public User(int id, String name, int age, int email, long mobile, String userName, String password, Role role) {
+	public User(int id, String name, int age, String email, long mobile, String userName, String password, Role role) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
@@ -73,11 +76,11 @@ public class User {
 		this.age = age;
 	}
 
-	public int getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(int email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
@@ -89,6 +92,14 @@ public class User {
 		this.mobile = mobile;
 	}
 
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
 	public List<Address> getAddress() {
 		return address;
 	}
@@ -96,13 +107,13 @@ public class User {
 	public void setAddress(List<Address> address) {
 		this.address = address;
 	}
-
-	public String getname() {
-		return userName;
-	}
-
+	
 	public void setUserName(String userId) {
 		this.userName = userId;
+	}
+	
+	public String getUserName() {
+		return userName;
 	}
 
 	public void setPassword(String password) {
