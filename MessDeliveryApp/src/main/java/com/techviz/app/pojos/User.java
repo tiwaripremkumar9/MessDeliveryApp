@@ -2,6 +2,8 @@ package com.techviz.app.pojos;
 
 import java.util.List;
 
+import org.antlr.v4.runtime.misc.NotNull;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,6 +25,7 @@ public class User {
 	@Column(name="USER_ID")
 	private int id;
 	@Column(name = "NAME", nullable = false)
+	@NotNull
 	private String name;
 	@Column(name = "AGE")
 	private int age;

@@ -5,6 +5,8 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -12,11 +14,13 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name="MESS")
 @Getter
+@NoArgsConstructor
 @Setter
 public class Mess {
 	
@@ -25,22 +29,25 @@ public class Mess {
 	private int id;
 	@Column(name = "MESS_NAME")
 	private String messName;
-	@OneToOne
-	private Address address;
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "mess")
-	private List<Order> orders;
+	@Enumerated(EnumType.STRING)
+	@Column(name = "mess_locality", nullable = false)
+	private Locality locality;
 	private long phone;
+	@OneToMany(mappedBy = "mess", cascade = CascadeType.ALL)
+	private List<Food> foods;
+//	@OneToMany
+//	private List<Order> orders;
 	
-	public Mess(int id, String messName, Address address, long phone) {
+	public Mess(int id, String messName, Locality locality, long phone) {
 		this.id = id;
 		this.messName = messName;
-		this.address = address;
+		this.locality = locality;
 		this.phone = phone;
 	}
 
 	@Override
 	public String toString() {
-		return "Mess [id=" + id + ", messName=" + messName + ", address=" + address + ", owner=" + ", phone="
+		return "Mess [id=" + id + ", messName=" + messName + ", locality=" + locality + ", owner=" + ", phone="
 				+ phone + "]";
 	}
 	

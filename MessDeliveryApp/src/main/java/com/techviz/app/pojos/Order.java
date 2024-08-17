@@ -28,7 +28,7 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ORDERS_ID")
 	private int id;
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
 	@Column(name="ORDERS_DETAIL")
@@ -36,12 +36,12 @@ public class Order {
 	@Enumerated(EnumType.STRING)
 	@Column(name="ORDERS_STATUS", nullable = false)
 	private OrderStatus orderStatus;
-	@OneToOne
-	@JoinColumn(name = "ORDER_ADDR")
-	private Address address;
+//	@OneToOne
+//	@JoinColumn(name = "ORDER_ADDR")
+//	private Address address;
 	@ManyToMany(mappedBy = "orders", cascade = CascadeType.ALL)
 	private List<Food> foods;
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "mess")
 	private Mess mess;
 	

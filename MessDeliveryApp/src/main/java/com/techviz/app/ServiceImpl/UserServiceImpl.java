@@ -38,7 +38,13 @@ public class UserServiceImpl implements IUserService {
 	
 	public UserDTO convertToDTO(User aUser) {
 		UserDTO userDTO = new UserDTO();
-		userDTO = modelMapper.map(aUser, UserDTO.class);
+		//userDTO = modelMapper.map(aUser, UserDTO.class);
+		userDTO.setId(aUser.getId());
+		userDTO.setName(aUser.getName());
+		userDTO.setEmail(aUser.getEmail());
+		userDTO.setMobile(aUser.getMobile());
+		userDTO.setUserName(aUser.getUserName());
+		userDTO.setRole(aUser.getRole());
 		
 		return userDTO;
 	}

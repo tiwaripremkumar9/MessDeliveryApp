@@ -1,0 +1,138 @@
+{
+  "messName": "Spice Route Mess",
+  "locality": "KORAMANGALA",
+  "phone": 9876543212,
+  "foods": [
+    {
+      "description": "Aloo Paratha",
+      "availability": true
+    },
+    {
+      "description": "Egg Curry",
+      "availability": true
+    },
+    {
+      "description": "Mixed Veg",
+      "availability": false
+    }
+  ]
+}
+
+
+{
+  "messName": "Heritage Mess",
+  "locality": "WHITEFIELD",
+  "phone": 9123456781,
+  "foods": [
+    {
+      "description": "Rajma Chawal",
+      "availability": true
+    },
+    {
+      "description": "Butter Naan",
+      "availability": true
+    },
+    {
+      "description": "Paneer Tikka",
+      "availability": false
+    },
+    {
+      "description": "Fish Curry",
+      "availability": true
+    }
+  ]
+}
+
+
+{
+  "messName": "Urban Delight Mess",
+  "locality": "MARATHAHALLI",
+  "phone": 9988776656,
+  "foods": [
+    {
+      "description": "Chana Masala",
+      "availability": true
+    },
+    {
+      "description": "Chicken Korma",
+      "availability": false
+    },
+    {
+      "description": "Gulab Jamun",
+      "availability": true
+    }
+  ]
+}
+
+
+{
+  "messName": "Royal Feast Mess",
+  "locality": "DODDANEKUNDI",
+  "phone": 9876543213,
+  "foods": [
+    {
+      "description": "Mutton Biryani",
+      "availability": true
+    },
+    {
+      "description": "Palak Paneer",
+      "availability": true
+    },
+    {
+      "description": "Raita",
+      "availability": true
+    },
+    {
+      "description": "Kheer",
+      "availability": false
+    },
+    {
+      "description": "Tandoori Roti",
+      "availability": true
+    }
+  ]
+}
+
+
+{
+  "messName": "Sunset Mess",
+  "locality": "KORAMANGALA",
+  "phone": 9123456782,
+  "foods": [
+    {
+      "description": "Veg Pulao",
+      "availability": true
+    },
+    {
+      "description": "Chicken Tikka",
+      "availability": true
+    },
+    {
+      "description": "Dal Makhani",
+      "availability": false
+    },
+    {
+      "description": "Rasgulla",
+      "availability": true
+    }
+  ]
+}
+
+
+{
+  "messName": "Green Valley Mess",
+  "locality": "DODDANEKUNDI",
+  "phone": "9876543210",
+  "foods": [
+    {
+      "description": "Vegetable Curry",
+      "availability": true
+    },
+    {
+      "description": "Chicken Biryani",
+      "availability": false
+    }
+  ]
+}
+
+

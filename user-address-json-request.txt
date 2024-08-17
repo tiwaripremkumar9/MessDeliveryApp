@@ -1,0 +1,247 @@
+{
+  "name": "Olivia Taylor",
+  "phone": "6677889900",
+  "email": "olivia.taylor@example.com",
+  "userName": "oliviat",
+  "password": "oliviaPass654",
+  "age": 26,
+  "address": [
+    {
+      "line1": "909 Ninth St",
+      "line2": "Building B",
+      "line3": "",
+      "locality": "KORAMANGALA",
+      "pincode": "560095"
+    },
+    {
+      "line1": "1010 Tenth St",
+      "line2": "",
+      "line3": "Near Hospital",
+      "locality": "MARATHAHALLI",
+      "pincode": "560037"
+    }
+  ],
+  "role": "CUSTOMER"
+}
+
+
+{
+  "name": "James Lee",
+  "phone": "5566778899",
+  "email": "james.lee@example.com",
+  "userName": "jamesl",
+  "password": "jamesPass321",
+  "age": 27,
+  "address": [
+    {
+      "line1": "707 Seventh St",
+      "line2": "",
+      "line3": "Near Market",
+      "locality": "DODDANEKUNDI",
+      "pincode": "560037"
+    },
+    {
+      "line1": "808 Eighth St",
+      "line2": "Suite 8",
+      "line3": "",
+      "locality": "WHITEFIELD",
+      "pincode": "560066"
+    }
+  ],
+  "role": "CUSTOMER"
+}
+
+
+{
+  "name": "Sophia Martinez",
+  "phone": "4455667788",
+  "email": "sophia.martinez@example.com",
+  "userName": "sophiam",
+  "password": "sophiaPass456",
+  "age": 32,
+  "address": [
+    {
+      "line1": "606 Sixth St",
+      "line2": "Apt 12",
+      "line3": "",
+      "locality": "MARATHAHALLI",
+      "pincode": "560037"
+    }
+  ],
+  "role": "CUSTOMER"
+}
+
+
+{
+  "name": "David Wilson",
+  "phone": "3344556677",
+  "email": "david.wilson@example.com",
+  "userName": "davidw",
+  "password": "davidPass789",
+  "age": 40,
+  "address": [
+    {
+      "line1": "404 Fourth St",
+      "line2": "",
+      "line3": "Opposite School",
+      "locality": "WHITEFIELD",
+      "pincode": "560066"
+    },
+    {
+      "line1": "505 Fifth St",
+      "line2": "Floor 3",
+      "line3": "",
+      "locality": "KORAMANGALA",
+      "pincode": "560095"
+    }
+  ],
+  "role": "CUSTOMER"
+}
+
+
+{
+  "name": "Emily Davis",
+  "phone": "2233445566",
+  "email": "emily.davis@example.com",
+  "userName": "emilyd",
+  "password": "emilySecure!45",
+  "age": 29,
+  "address": [
+    {
+      "line1": "303 Third St",
+      "line2": "Suite 5",
+      "line3": "",
+      "locality": "DODDANEKUNDI",
+      "pincode": "560037"
+    }
+  ],
+  "role": "CUSTOMER"
+}
+
+
+{
+  "name": "Michael Brown",
+  "phone": "9876543210",
+  "email": "michael.brown@example.com",
+  "userName": "michaelb",
+  "password": "michaelPass123",
+  "age": 35,
+  "address": [
+    {
+      "line1": "101 First St",
+      "line2": "Block A",
+      "line3": "",
+      "locality": "KORAMANGALA",
+      "pincode": "560095"
+    },
+    {
+      "line1": "202 Second St",
+      "line2": "",
+      "line3": "Near Lake",
+      "locality": "MARATHAHALLI",
+      "pincode": "560037"
+    }
+  ],
+  "role": "CUSTOMER"
+}
+
+
+{
+  "name": "David Wilson",
+  "phone": "3344556677",
+  "email": "david.wilson@example.com",
+  "userName": "davidw",
+  "password": "davidPass789",
+  "age": 40,
+  "address": [
+    {
+      "line1": "404 Fourth St",
+      "line2": "",
+      "line3": "Opposite School",
+      "locality": "WHITEFIELD",
+      "pincode": "560066"
+    },
+    {
+      "line1": "505 Fifth St",
+      "line2": "Floor 3",
+      "line3": "",
+      "locality": "KORAMANGALA",
+      "pincode": "560095"
+    }
+  ],
+  "role": "ADMIN"
+}
+
+
+{
+  "name": "Alice Johnson",
+  "phone": "1122334455",
+  "email": "alice.johnson@example.com",
+  "userName": "alicej",
+  "password": "alicePass789",
+  "age": 28,
+  "address": [
+    {
+      "line1": "321 Pine St",
+      "line2": "",
+      "line3": "Opposite Mall",
+      "locality": "DODDANEKUNDI",
+      "pincode": "560037"
+    },
+    {
+      "line1": "654 Maple St",
+      "line2": "Floor 2",
+      "line3": "",
+      "locality": "MARATHAHALLI",
+      "pincode": "560037"
+    }
+  ],
+  "role": "CUSTOMER"
+}
+
+
+{
+  "name": "Jane Smith",
+  "phone": "0987654321",
+  "email": "jane.smith@example.com",
+  "userName": "janesmith",
+  "password": "securePass!45",
+  "age": 25,
+  "address": [
+    {
+      "line1": "789 Oak St",
+      "line2": "Suite 10",
+      "line3": "",
+      "locality": "KORAMANGALA",
+      "pincode": "560095"
+    }
+  ],
+  "role": "ADMIN"
+}
+
+
+{
+  "name": "John Doe",
+  "phone": "1234567890",
+  "email": "john.doe@example.com",
+  "userName": "johndoe",
+  "password": "password123",
+  "age": 30,
+  "address": [
+    {
+      "line1": "123 Main St",
+      "line2": "Apt 4B",
+      "line3": "",
+      "locality": "MARATHAHALLI",
+      "pincode": "560037"
+    },
+    {
+      "line1": "456 Elm St",
+      "line2": "",
+      "line3": "Near Park",
+      "locality": "WHITEFIELD",
+      "pincode": "560066"
+    }
+  ],
+  "role": "CUSTOMER"
+}

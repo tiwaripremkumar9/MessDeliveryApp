@@ -17,11 +17,13 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "FOOD")
 @Getter
+@NoArgsConstructor
 @Setter
 public class Food {
 	
@@ -32,16 +34,19 @@ public class Food {
 	@Column(name = "FOOD_DESC")
 	private String description;
 	@Column(name = "FOOD_AVAIL")
-	private Boolean availibity;
+	private Boolean availability;
 	@ManyToMany
 	@JoinTable(name = "FOOD_ORDERS",
 			joinColumns = {@JoinColumn(name = "FOOD_ID")},
 			inverseJoinColumns = {@JoinColumn(name="ORDERS_ID")})
 	private Set<Order> orders;
+	@ManyToOne
+	@JoinColumn(name = "food_mess")
+	private Mess mess;
 	
 	public Food(int id, String description, Boolean availibity) {
 		this.id = id;
 		this.description = description;
-		this.availibity = availibity;
+		this.availability = availibity;
 	}
 }
