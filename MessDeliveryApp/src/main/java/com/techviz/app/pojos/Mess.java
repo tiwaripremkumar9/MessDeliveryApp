@@ -13,6 +13,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,12 +35,18 @@ public class Mess {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column(name = "MESS_NAME")
+	@NotBlank
+	@Size(min = 5, max = 25)
 	private String messName;
 	@Enumerated(EnumType.STRING)
 	@Column(name = "mess_locality", nullable = false)
+	@NotNull
 	private Locality locality;
+	@NotBlank
+	@NotNull
 	private long phone;
 	@OneToMany(mappedBy = "mess", cascade = CascadeType.ALL)
+	@NotEmpty
 	private List<Food> foods;
 //	@OneToMany
 //	private List<Order> orders;

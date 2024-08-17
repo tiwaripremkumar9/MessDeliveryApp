@@ -16,6 +16,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,11 +33,14 @@ public class Order {
 	private int id;
 	@ManyToOne
 	@JoinColumn(name = "user_id")
+	@Valid
 	private User user;
 	@Column(name="ORDERS_DETAIL")
+	@NotBlank
 	private String orderDetail;
 	@Enumerated(EnumType.STRING)
 	@Column(name="ORDERS_STATUS", nullable = false)
+	@NotNull// @NotNull is the allowed validation for Enum types
 	private OrderStatus orderStatus;
 //	@OneToOne
 //	@JoinColumn(name = "ORDER_ADDR")
@@ -43,6 +49,7 @@ public class Order {
 	private List<Food> foods;
 	@OneToOne
 	@JoinColumn(name = "mess")
+	@Valid
 	private Mess mess;
 	
 	public Order(int id, User user, String orderDetail, OrderStatus status) {

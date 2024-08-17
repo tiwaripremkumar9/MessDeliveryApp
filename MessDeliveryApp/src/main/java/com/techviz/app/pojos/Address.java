@@ -1,6 +1,10 @@
 package com.techviz.app.pojos;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 @Entity
 @Getter
@@ -12,13 +16,20 @@ public class Address {
 	@Column(name = "addr_id")
 	private int id;
 	@Column(name = "addr_line1")
+	@NotBlank(message = "line1 can not be blank.")
+	@Size(min = 5)
 	private String line1;
 	@Column(name = "addr_line2")
+	@NotBlank(message = "line2 can not be blank.")
+	@Size(min = 5)
 	private String line2;
 	@Column(name = "addr_line3")
 	private String line3;
 	@Enumerated(EnumType.STRING)
+	@NotNull
 	private Locality locality;
+	@NotNull
+	@Min(000001)
 	private int pincode;
 	@ManyToOne
 	@JoinColumn(name = "user")

@@ -2,7 +2,6 @@ package com.techviz.app.pojos;
 
 import java.util.List;
 
-import org.antlr.v4.runtime.misc.NotNull;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -13,8 +12,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -25,20 +29,30 @@ public class User {
 	@Column(name="USER_ID")
 	private int id;
 	@Column(name = "NAME", nullable = false)
-	@NotNull
+	@NotBlank(message = "Name is required")
+	@Size(min = 5, max = 30)
 	private String name;
 	@Column(name = "AGE")
+	@Min(12)
+	@NotNull(message = "Age is required.")
 	private int age;
 	@Column(name = "EMAIL", nullable = false)
+	@NotBlank(message = "Email can't be blank.")
+	@Email(message = "Email is not valid", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
 	private String email;
 	@Column(name = "MOBILE", nullable = false)
+	@NotNull
 	private long mobile;
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
 	@Column(nullable = false)
 	private List<Address> address;
 	@Column(nullable = false)
+	@NotBlank
+	@Size(min = 4, max = 20)
 	private String userName;
 	@Column(name = "PASSWORD", nullable = false)
+	@NotBlank(message = "Password is required.")
+	@Size(min = 8, max = 24)
 	private String password;
 	@Enumerated(EnumType.STRING)
 	@Column(name = "ROLE", nullable = false)

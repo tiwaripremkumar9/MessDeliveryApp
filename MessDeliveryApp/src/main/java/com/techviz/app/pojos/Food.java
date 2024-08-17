@@ -16,6 +16,12 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -32,8 +38,11 @@ public class Food {
 	@Column(name = "FOOD_ID")
 	private int id;
 	@Column(name = "FOOD_DESC")
+	@NotBlank
+	@Size(min = 20, max = 50)
 	private String description;
 	@Column(name = "FOOD_AVAIL")
+	@NotNull
 	private Boolean availability;
 	@ManyToMany
 	@JoinTable(name = "FOOD_ORDERS",
@@ -42,6 +51,12 @@ public class Food {
 	private Set<Order> orders;
 	@ManyToOne
 	@JoinColumn(name = "food_mess")
+	/*
+	 * When dealing with complex objects that have nested properties requiring validation, 
+	 * we can use the @Valid annotation along with validation annotations to ensure that both the top-level object 
+	 * and its nested properties are properly validated.
+	 */
+	@Valid
 	private Mess mess;
 	
 	public Food(int id, String description, Boolean availibity) {
