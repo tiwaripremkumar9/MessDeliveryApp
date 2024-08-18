@@ -41,11 +41,11 @@ public class RegisterController {
 	/*
 	 * handling exception at controller level
 	 */
-	@ExceptionHandler(ConstraintViolationException.class)
-	public ResponseEntity<String> handleConstraintViolationException(ConstraintViolationException ex){
-		return new ResponseEntity<String>(ex.getMessage(), HttpStatus.BAD_REQUEST);
-		
-	}
+//	@ExceptionHandler(ConstraintViolationException.class)
+//	public ResponseEntity<String> handleConstraintViolationException(ConstraintViolationException ex){
+//		return new ResponseEntity<String>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+//		
+//	}
 //	
 	
 
