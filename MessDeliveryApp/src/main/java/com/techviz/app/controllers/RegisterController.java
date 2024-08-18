@@ -1,6 +1,7 @@
 package com.techviz.app.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import com.techviz.app.pojos.User;
 import com.techviz.app.service.IMessService;
 import com.techviz.app.service.IUserService;
 
+import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
 
 @RestController
@@ -34,6 +36,14 @@ public class RegisterController {
 	public ResponseEntity<MessDTO> registerMess(@Valid @RequestBody Mess mess){
 		MessDTO registeredMess = messService.registerMess(mess);
 		return ResponseEntity.accepted().body(registeredMess);
+	}
+	
+	/*
+	 * handling exception at controller level
+	 */
+	@ExceptionHandler(ConstraintViolationException.class)
+	public ResponseEntity<String> handleConstraintViolationException(ConstraintViolationException ex){
+		return new ResponseEntity<String>(ex.getMessage(), HttpStatus.BAD_REQUEST);
 		
 	}
 //	
